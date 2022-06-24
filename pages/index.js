@@ -6,6 +6,7 @@ import styles from '../styles/Home.module.css'
 
 const getPosts = async () => {
   const res = await fetch(`https://${process.env.blogUrl}/ghost/api/content/posts?key=${process.env.contentApiKey}`).then((res) => res.json() )
+  
   const titles =  res.posts.map(post => post.title)
  
   return titles
@@ -13,6 +14,7 @@ const getPosts = async () => {
 
 export const getStaticProps = async({ params }) => {
   const titles = await getPosts()
+  
   return {
     props: {titles}
   } 
@@ -33,6 +35,7 @@ const Home = (props) =>  {
         <h1 className={styles.title}>
         {title}
         </h1>
+        <p>Choo choo</p>
 
         
       </main>
