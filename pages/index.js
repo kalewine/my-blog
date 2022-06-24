@@ -35,7 +35,8 @@ const Home = (props) =>  {
         <h1 className={styles.title}>
         {title}
         </h1>
-        <p>Choo choo</p>
+        <p>testing testing</p>
+
 
         
       </main>
