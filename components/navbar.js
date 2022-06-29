@@ -1,6 +1,9 @@
 import React from 'react'
 
 const Navbar = () =>  {
+    
+   
+
     return (
         <nav>
             <a href="#home">
@@ -16,7 +19,7 @@ const Navbar = () =>  {
                 <li className="nav__link" ><a href="#work" id="work-link">Work</a></li>
                 <li className="nav__link"><a href="#contact"  id="contact-link">Contact</a></li>
             </ul>
-            <div className="nav__toggle" id="toggle-bars" onclick="openMenu()">
+            <div className="nav__toggle" id="toggle-bars">
                 <span className="nav__toggle-bar"></span>
                 <span className="nav__toggle-bar"></span>
                 <span className="nav__toggle-bar"></span>
