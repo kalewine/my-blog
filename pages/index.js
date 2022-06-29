@@ -1,49 +1,48 @@
 import Head from 'next/head'
 import React from 'react'
-import styles from '../styles/Home.module.css'
+import Header from '../components/header'
+import Posts from '../components/posts'
+import Footer from '../components/footer'
+
 
 
 
 const getPosts = async () => {
   const res = await fetch(`https://${process.env.blogUrl}/ghost/api/content/posts?key=${process.env.contentApiKey}`).then((res) => res.json() )
+  const posts = res.posts.map(post => post)
   
-  const titles =  res.posts.map(post => post.title)
- 
-  return titles
+  return {posts}
 }
 
 export const getStaticProps = async({ params }) => {
-  const titles = await getPosts()
-  
+  const posts = await getPosts()
   return {
-    props: {titles}
+    props: posts
   } 
 }
 
 const Home = (props) =>  {
-  const title = props.titles[0];
-  
+
   return (
-    <div className={styles.container}>
+    <div>
       <Head>
         <title>Kayla Alewine&apos;s Blog</title>
         <meta name="description" content="a blog detailing a coding apprentice's journey through the Develop Carolina Program" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
+        <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,400;0,600;1,300&family=Ribeye+Marrow&display=swap" rel="stylesheet"/>
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <Header />
+       
+      <main>
+        {props.posts.map(post => {
+         return (<Posts key={post.id} title={post.title} date={post.published_at} content={post.html} image={post.feature_image}/>) 
+        })}
 
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-        {title}
-        </h1>
-        <p>testing testing</p>
-
-
-        
       </main>
 
-      <footer className={styles.footer}>
-       
-      </footer>
+      <Footer />
     </div>
   )
 }
