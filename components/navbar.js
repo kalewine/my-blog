@@ -8,7 +8,7 @@ const Navbar = () =>  {
     const toggleMenu = () => {
         setNavbarOpen(!navbarOpen)
     }
-    navbarOpen ? document.body.style.position = 'fixed' : document.body.style.position = "relative"
+    // navbarOpen ? document.body.style.position = 'fixed' : document.body.style.position = "relative"
 
     return (
         <nav className="nav-open"> 
