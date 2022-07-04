@@ -6,7 +6,6 @@ import Footer from '../components/footer'
 
 
 
-
 const getPosts = async () => {
   const res = await fetch(`https://${process.env.blogUrl}/ghost/api/content/posts?key=${process.env.contentApiKey}`).then((res) => res.json() )
   const posts = res.posts.map(post => post)
@@ -22,6 +21,7 @@ export const getStaticProps = async({ params }) => {
 }
 
 const Home = (props) =>  {
+  
 
   return (
     <div>
