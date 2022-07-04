@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import Image from 'next/dist/client/image';
 
 
 const Navbar = () =>  {
@@ -13,35 +14,42 @@ const Navbar = () =>  {
         <nav className="nav-open"> 
         
             <a href="#home">
-                <picture>
-                    <source srcSet="../public/kayla-alewine-logo.svg" type="image/svg" />
-                    <img className="nav__logo" id="logo" src="kayla-alewine-logo.svg" alt="letter K over letter A initials for Kayla Alewine"/>
-            
-                </picture>
+                <Image
+                    src="/kayla-alewine-logo.svg"
+                    alt="letter K over letter A initials for Kayla Alewine"
+                    width={40}
+                    height={40}
+                    className="nav__logo" 
+                />
+                
              </a>
                
             <ul className={navbarOpen ? "nav__links nav__links-open" : "nav__links"}>
                 <ul className="mobile-menu-dots">
                     <li > 
-                        <picture>
-                            <source srcSet="../public/narrow-fuchsia-dot-grid.svg" type="image/svg" />
-                            <img src="narrow-fuchsia-dot-grid.svg" alt="fuchsia colored dot grid" />
-            
-                         </picture>
+                        <Image
+                            src="/narrow-fuchsia-dot-grid.svg"
+                            alt="fuchsia colored dot grid"
+                            width={220}
+                            height={120}
+                        />
+                        
                     </li>
                     <li > 
-                        <picture>
-                            <source srcSet="../public/narrow-mint-green-dot-grid.svg" type="image/svg" />
-                            <img src="narrow-mint-green-dot-grid.svg" alt="mint green colored dot grid" />
-            
-                         </picture>
+                        <Image
+                            src="/narrow-mint-green-dot-grid.svg"
+                            alt="mint green colored dot grid"
+                            width={250}
+                            height={150}
+                        />
                     </li>
                     <li > 
-                        <picture>
-                            <source srcSet="../public/narrow-mint-green-dot-grid.svg" type="image/svg" />
-                            <img src="narrow-purple-dot-grid.svg" alt="purple dot grid" />
-            
-                         </picture>
+                        <Image
+                            src="/narrow-purple-dot-grid.svg"
+                            alt="purple colored dot grid"
+                            width={200}
+                            height={120}
+                        />
                     </li>
                 
                 </ul>
