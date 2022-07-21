@@ -13,7 +13,7 @@ const Navbar = () =>  {
     return (
         <nav className="nav-open"> 
         
-            <a href="#home">
+            <a href="https://kaylaalewine.com/#home">
                 <div className="nav__logo">
                 <Image
                     src="/kayla-alewine-logo.svg"
