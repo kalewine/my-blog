@@ -5,16 +5,17 @@ import Posts from '../components/posts'
 import Footer from '../components/footer'
 
 
-
 const getPosts = async () => {
-  const res = await fetch(`https://${process.env.blogUrl}/ghost/api/content/posts?key=${process.env.contentApiKey}`).then((res) => res.json() )
-  const posts = res.posts.map(post => post)
-  
+  const res = await fetch(`https://www.googleapis.com/blogger/v3/blogs/${process.env.BLOG_ID}/posts?key=${process.env.KEY}`).then((res) => res.json() )
+
+  const posts = res.items.map(post => post)
+  console.log(posts)
   return {posts}
 }
 
 export const getStaticProps = async({ params }) => {
   const posts = await getPosts()
+  
   return {
     props: posts
   } 
@@ -22,7 +23,6 @@ export const getStaticProps = async({ params }) => {
 
 const Home = (props) =>  {
   
-
   return (
     <div>
       <Head>
@@ -37,7 +37,7 @@ const Home = (props) =>  {
        
       <main>
         {props.posts.map(post => {
-         return (<Posts key={post.id} title={post.title} date={post.published_at} content={post.html} image={post.feature_image}/>) 
+         return (<Posts key={post.id} title={post.title} date={post.published} content={post.content} />) 
         })}
 
       </main>

@@ -14,14 +14,14 @@ const Navbar = () =>  {
         <nav className="nav-open"> 
         
             <a href="#home">
+                <div className="nav__logo">
                 <Image
                     src="/kayla-alewine-logo.svg"
                     alt="letter K over letter A initials for Kayla Alewine"
                     width={40}
                     height={40}
-                    className="nav__logo" 
                 />
-                
+                </div>
              </a>
                
             <ul className={navbarOpen ? "nav__links nav__links-open" : "nav__links"}>
@@ -56,9 +56,9 @@ const Navbar = () =>  {
                 
     
                     
-                <li className="nav__link" ><a href="#about" id="about-link">About</a></li>
-                <li className="nav__link" ><a href="#work" id="work-link">Work</a></li>
-                <li className="nav__link"><a href="#contact"  id="contact-link">Contact</a></li>
+                <li className="nav__link" ><a href="https://kaylaalewine.com/#about" id="about-link">About</a></li>
+                <li className="nav__link" ><a href="https://kaylaalewine.com/#work" id="work-link">Work</a></li>
+                <li className="nav__link"><a href="https://kaylaalewine.com/#contact"  id="contact-link">Contact</a></li>
             </ul>
             <div className="nav__toggle" onClick={toggleMenu} >
                 <span className={navbarOpen ? "nav__toggle-bar nav__toggle-bar-open" : "nav__toggle-bar"}></span>

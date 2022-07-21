@@ -17,23 +17,13 @@ const Posts = ({image, title, date, content}) => {
 
     const parseContent = (content) => {
            let nodeTree = parse(content)
-           
-            
+               
     }
 
     return (
         <section className='post'>
             <h3 className='post__title'>{title}</h3>
             <h4 className='post__date'>{formatDate(date)}</h4>
-            <div className="post__img">
-                <Image
-                    src={image}
-                    alt="square grid of white dots"
-                    height='300'
-                    width='300'
-                    layout="responsive"
-                />
-            </div>
             <div className='post__content' dangerouslySetInnerHTML={{__html: content}}></div>
         </section>
     )
