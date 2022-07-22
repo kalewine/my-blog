@@ -18,8 +18,9 @@ const Navbar = () =>  {
                 <Image
                     src="/kayla-alewine-logo.svg"
                     alt="letter K over letter A initials for Kayla Alewine"
-                    width={40}
-                    height={40}
+                    width={20}
+                    height={35}
+                    margin={0}
                 />
                 </div>
              </a>
@@ -32,6 +33,8 @@ const Navbar = () =>  {
                             alt="fuchsia colored dot grid"
                             width={220}
                             height={120}
+                            
+                            
                         />
                         
                     </li>

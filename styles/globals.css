@@ -218,6 +218,8 @@ nav{
 }
 
 
+
+
 .nav__links {
   display: flex;
     list-style: none;
@@ -232,6 +234,22 @@ nav{
   position: relative;
 }
 
+.nav__link:hover {
+  animation: wave 0.5s;
+}
+
+
+@keyframes wave {
+  0% {
+    transform:translateY(0px)
+  }
+  50% {
+    transform:translateY(-10px);
+  }
+  100% {
+    transform:translateY(0px) 
+  }
+}
 
 #about-link::before {
   content: ""; 
@@ -314,6 +332,7 @@ nav{
     height: 100%;
   }
 
+  
       
   .nav__toggle{
       display: flex;
