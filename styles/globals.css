@@ -420,16 +420,27 @@ footer {
   width: auto;
 }
 
+
+
 .footer__text{
   font-weight: 700;
   font-size: 1.2rem;
   text-align: right;
 }
 
+.footer__disclaimer {
+  font-size: 0.8rem;
+  font-style: italic;
+  padding-top: 0.3rem;
+  max-width: 600px;
+  text-align: right;
+}
+
 @media only screen and (max-width: 640px){
+  
+
   .footer__text{
       font-size: 1rem;
-      width: 80%;
   }
 }
 
